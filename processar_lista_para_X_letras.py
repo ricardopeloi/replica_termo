@@ -1,5 +1,6 @@
 def main():
-    arquivo_todas_as_palavras = open("br-utf8.txt", "r", encoding="utf-8")
+    # arquivo_todas_as_palavras = open("br-utf8.txt", "r", encoding="utf-8") # contém conjugações, o que deixa o jogo excessivamente complexo e desinteressante
+    arquivo_todas_as_palavras = open("portuguese.txt", "r", encoding="utf-8")
     conteudo = arquivo_todas_as_palavras.read()
     # print(content)
 
