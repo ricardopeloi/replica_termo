@@ -1,5 +1,5 @@
 Fontes das lista de palavras em português:
-- *Diceware*: https://github.com/thoughtworks/dadoware/blob/master/fontes/com_acentos.txt
+- **Diceware**: https://github.com/thoughtworks/dadoware/blob/master/fontes/com_acentos.txt
 - Dicio: https://www.dicio.com.br/lista-de-palavras/
     - lista muito pequena, poucas palavras
 - br-utf8: https://www.ime.usp.br/~pf/dicios/, https://www.ime.usp.br/~pf/dicios/br-utf8.txt
@@ -9,9 +9,10 @@ Fontes das lista de palavras em português:
 
 
 
-# TODO
+# TO-DO
 - ~Verificar se a palavra inserida é válida (usar a própria lista de palavras)~
-- Verificar letras com caracteres especiais
+- ~Verificar letras com caracteres especiais~
+- ~Verificar se a palavra inserida é válida, quando ela tem caracteres especiais~
 - ~Criar condições de vitória~
 - ~Criar condição de derrota~
 - Adicionar jogo completo ao histórico

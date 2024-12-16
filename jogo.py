@@ -15,22 +15,39 @@ def verificar_letra(var_palavra_escolhida, var_palpite_atual, var_posicao):
     var_cod_acerto_letra_nao_posicao = 103  # texto branco, fundo amarelo
     var_cod_normal = 0                      # fundo sem formatação
 
+    dict_caracteres_especiais = {
+        "Á": "A",
+        "Â": "A",
+        "Ã": "A",
+        "É": "E",
+        "Ê": "E",
+        "Í": "I",
+        "Î": "I",
+        "Ó": "O",
+        "Ô": "O",
+        "Õ": "O",
+        "Ú": "U",
+        "Û": "U",
+        "Ç": "C",
+    }
 
     # CASO EM QUE A LETRA ESTÁ CERTA, NA POSIÇÃO CERTA
-    if var_palavra_escolhida[var_posicao] == var_palpite_atual[var_posicao]:
+    if dict_caracteres_especiais.get(var_palavra_escolhida[var_posicao], var_palavra_escolhida[var_posicao]) == dict_caracteres_especiais.get(var_palpite_atual[var_posicao], var_palpite_atual[var_posicao]):
+    # if var_palavra_escolhida[var_posicao] == var_palpite_atual[var_posicao]:
         return 1, '\033[' + str(var_cod_acerto_letra_e_posicao) + 'm'+ ' ' + var_palpite_atual[var_posicao] + ' ' + '\033[' + str(var_cod_normal) + 'm' + ' '
     
     
     else:
         for letra in var_palavra_escolhida:
-            if (var_palpite_atual[var_posicao] == letra): # CASO EM QUE A LETRA ESTÁ CERTA, NA POSIÇÃO ERRADA
+            # CASO EM QUE A LETRA ESTÁ CERTA, NA POSIÇÃO ERRADA
+            if (dict_caracteres_especiais.get(var_palpite_atual[var_posicao], var_palpite_atual[var_posicao]) == dict_caracteres_especiais.get(letra, letra)): 
 
                 
                 # SE A LETRA SÓ APARECE UMA VEZ NA PALAVRA, E JÁ ACERTEI, PINTAR DE BRANCO
                 if var_palavra_escolhida.count(var_palpite_atual[var_posicao]) == 1:
                     for var_posicao_letra_ja_identificada in range(len(var_palavra_escolhida)):
-                        if  (var_palavra_escolhida[var_posicao_letra_ja_identificada] == var_palpite_atual[var_posicao]) * \
-                            (var_palavra_escolhida[var_posicao_letra_ja_identificada] == var_palpite_atual[var_posicao_letra_ja_identificada]):
+                        if  (dict_caracteres_especiais.get(var_palavra_escolhida[var_posicao_letra_ja_identificada], var_palavra_escolhida[var_posicao_letra_ja_identificada]) == dict_caracteres_especiais.get(var_palpite_atual[var_posicao], var_palpite_atual[var_posicao])) * \
+                            (dict_caracteres_especiais.get(var_palavra_escolhida[var_posicao_letra_ja_identificada], var_palavra_escolhida[var_posicao_letra_ja_identificada]) == dict_caracteres_especiais.get(var_palpite_atual[var_posicao_letra_ja_identificada], var_palpite_atual[var_posicao_letra_ja_identificada])):
                             
                             return 0, '\033[' + str(var_cod_normal) + 'm'+ ' ' + var_palpite_atual[var_posicao] + ' ' + '\033[' + str(var_cod_normal) + 'm' + ' ' 
                 
@@ -97,7 +114,7 @@ def jogar_termo():
                     print("O número de letras deve ser entre 1 e 15!")          
                 else:
                     try:
-                        arquivo_palavras = open("Lista de Palavras//Listas de Palavras para o Jogo//lista_palavras_" + var_qtd_letras + "_letras.txt", "r", encoding="latin-1") \
+                        arquivo_palavras = open("Lista de Palavras//Listas de Palavras para o Jogo//lista_palavras_" + var_qtd_letras + "_letras.txt", "r", encoding="utf-8") \
                         .read() \
                         .split('\n')
                     except:
@@ -116,7 +133,8 @@ def jogar_termo():
 
     var_palavra_escolhida = arquivo_palavras[random.randint(0, len(arquivo_palavras)-2)].upper()
     # var_palavra_escolhida = "TESTE"
-    # print(var_palavra_escolhida)
+    var_palavra_escolhida = "ALÇAR"
+    print(var_palavra_escolhida)
 
 
     qtd_max_palpites = int(var_qtd_letras) + 1

@@ -75,7 +75,7 @@ def main():
 
         elif var_escolha == '5':
             print("---Em construção!---" + '\n')
-            lista_white_list = ["costas", "pó", "lá", "pé", "raios", "risos", "risão", "bisão"]
+            lista_white_list = ["costas", "pó", "lá", "pé", "raios", "risos", "risão", "bisão", "praça"]
             time.sleep(var_tempo_sleep_padrao) # type: ignore # ver seção check_and_install_packages
 
         elif var_escolha == '0':
