@@ -2,6 +2,7 @@ import importlib
 import subprocess
 import sys
 
+
 def check_and_install_packages(packages):
 
     # FONTE: https://stackoverflow.com/questions/76386461/how-to-use-python-to-check-for-and-install-librarys
@@ -17,12 +18,12 @@ def check_and_install_packages(packages):
 
 
 def processar_lista_para_X_letras():
-    from processar_lista_para_X_letras import main
-    main()
+    from processar_listas import processar_lista_para_X_letras
+    processar_lista_para_X_letras()
 
 def jogo():
-    from jogo import main
-    main()
+    from jogo import jogar_termo
+    jogar_termo()
 
 
 def main():
@@ -46,6 +47,7 @@ def main():
             "2: importar novas palavras" + '\n'
             "3: ver histórico de jogos" + '\n'
             "4: adicionar e/ou remover palavras da black list" + '\n'
+            "5: adicionar e/ou remover palavras da white list" + '\n'
             '\n'
             "0: Sair" + '\n'
         )
@@ -55,7 +57,7 @@ def main():
 
         if var_escolha == '1':
             jogo()
-            # print("Novo jogo" + '\n')
+            time.sleep(var_tempo_sleep_padrao) # type: ignore # ver seção check_and_install_packages
 
         elif var_escolha == '2':
             processar_lista_para_X_letras()
@@ -68,11 +70,12 @@ def main():
 
         elif var_escolha == '4':
             print("---Em construção!---" + '\n')
-            lista_black_list = ["ábêcê", "alvar", "azibó", "cdlvi", "color", "cxxxi", "équis", "gauro", "labro", "lízia", "mdlvi", "mdxxx", "pruir", "rilar", "suruí", "úbere", "xelma", ]
+            lista_black_list = []
             time.sleep(var_tempo_sleep_padrao) # type: ignore # ver seção check_and_install_packages
 
         elif var_escolha == '5':
             print("---Em construção!---" + '\n')
+            lista_white_list = ["costas", "pó", "lá", "pé", "raios", "risos", "risão", "bisão"]
             time.sleep(var_tempo_sleep_padrao) # type: ignore # ver seção check_and_install_packages
 
         elif var_escolha == '0':
