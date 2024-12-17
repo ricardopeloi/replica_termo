@@ -16,5 +16,6 @@ Fontes das lista de palavras em português:
 - ~Criar condições de vitória~
 - ~Criar condição de derrota~
 - Adicionar jogo completo ao histórico
-- Adicionar reusltado do jogo ao histórico
+- Adicionar resultado do jogo ao histórico
 - Adicionar palavras ao white list (inclusive enquanto está jogando)
+- Criar histórico por jogador (criar um arquivo com o nome do jogador)
