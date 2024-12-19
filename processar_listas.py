@@ -23,22 +23,6 @@ def processar_lista_para_X_letras(var_X = None):
 
     var_lista_palavras_com_X_letras = ""
 
-    dict_caracteres_especiais = {
-        "Á": "A",
-        "Â": "A",
-        "Ã": "A",
-        "É": "E",
-        "Ê": "E",
-        "Í": "I",
-        "Î": "I",
-        "Ó": "O",
-        "Ô": "O",
-        "Õ": "O",
-        "Ú": "U",
-        "Û": "U",
-        "Ç": "C",
-    }
-
     for palavra in lista_palavras:
         # print("'" + palavra.strip() + "', qtd letras: " + str(len(palavra.strip())))
 
@@ -49,11 +33,6 @@ def processar_lista_para_X_letras(var_X = None):
             # lista_palavras_com_X_letras.append(palavra)
             var_lista_palavras_com_X_letras = var_lista_palavras_com_X_letras + palavra.lower() + '\n'
 
-            palavra_sem_caracteres_especiais = ""
-            for letra in palavra.upper():
-                palavra_sem_caracteres_especiais = palavra_sem_caracteres_especiais + dict_caracteres_especiais.get(letra, letra)
-            if palavra_sem_caracteres_especiais.lower() != palavra.lower():
-                var_lista_palavras_com_X_letras = var_lista_palavras_com_X_letras + palavra_sem_caracteres_especiais.lower() + '\n'
 
     # else:
         # print("Palavra '" + palavra + "' NÃO adicionada" + '\n')
