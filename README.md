@@ -23,6 +23,8 @@ Por fim, a melhor solução encontrada até o momento é uma lista de palavras u
     - ~~No processamento da white list, adicionar ao arquivo da lista de palavras padrão~~
     - ~~No meio do jogo, quando o jogador colocar uma palavra inválida, perguntar se o jogador quer adicioná-la à white list~~
 - Adicionar resultado do jogo ao histórico
-    - Criar histórico por jogador (criar um arquivo com o nome do jogador)
-    - Adicionar jogo completo ao histórico
+    - ~~Criar histórico por jogador (criar um arquivo com o nome do jogador)~~
+    - Adicionar jogo completo ao histórico (demais palpites, além do resultado em si)
+    - Permitir ver todos os jogadores, assim como escolher quem é o usuário que está jogando
+    - Criar um gráfico dos resultados do jogador
 - Adicionar regras do jogo ao Readme
