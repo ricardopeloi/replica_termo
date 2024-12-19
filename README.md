@@ -1,3 +1,6 @@
+# Como jogar?
+
+
 # Fontes das lista de palavras em português
 **Essa foi a parte mais difícil do projeto!**
 
@@ -15,10 +18,11 @@ Por fim, a melhor solução encontrada até o momento é uma lista de palavras u
     - ~~Verificar se a palavra inserida é válida, quando ela tem caracteres especiais~~
 - ~~Criar condições de vitória~~
 - ~~Criar condição de derrota~~
-- Adicionar palavras ao white list (inclusive enquanto está jogando)
-    - Criar arquivo com palavras da white list
-    - No processamento da white list, adicionar ao arquivo da lista de palavras padrão
-    - No meio do jogo, quando o jogador colocar uma palavra inválida, perguntar se o jogador quer adicioná-la à white list
+- ~~Adicionar palavras ao white list (inclusive enquanto está jogando)~~
+    - ~~Criar arquivo com palavras da white list~~
+    - ~~No processamento da white list, adicionar ao arquivo da lista de palavras padrão~~
+    - ~~No meio do jogo, quando o jogador colocar uma palavra inválida, perguntar se o jogador quer adicioná-la à white list~~
 - Adicionar resultado do jogo ao histórico
     - Criar histórico por jogador (criar um arquivo com o nome do jogador)
     - Adicionar jogo completo ao histórico
+- Adicionar regras do jogo ao Readme

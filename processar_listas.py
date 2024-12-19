@@ -1,12 +1,18 @@
 def processar_lista_para_X_letras(var_X = None):
-    # arquivo_todas_as_palavras = open("Lista de Palavras//br-utf8.txt", "r", encoding="utf-8")
-    # arquivo_todas_as_palavras = open("Lista de Palavras//portuguese.txt", "r", encoding="utf-8")
-    # arquivo_todas_as_palavras = open("Lista de Palavras//lista_tratada_dicio.txt", "r", encoding="utf-8")
-    arquivo_todas_as_palavras = open("Lista de Palavras//com_acentos.txt", "r", encoding="utf-8")
-    conteudo = arquivo_todas_as_palavras.read()
-    # print(content)
+    from gerir_listas_manuais import consultar_palavras
 
-    lista_palavras = conteudo.split('\n')
+    # lista_palavras = consultar_palavras("Lista de Palavras//br-utf8.txt")
+    # lista_palavras = consultar_palavras("Lista de Palavras//portuguese.txt")
+    # lista_palavras = consultar_palavras("Lista de Palavras//lista_tratada_dicio.txt")
+    lista_palavras = consultar_palavras("Lista de Palavras//com_acentos.txt")
+
+    lista_white_list = consultar_palavras("Lista de Palavras//white_list.txt")
+    lista_black_list = consultar_palavras("Lista de Palavras//black_list.txt")
+
+    lista_palavras = lista_palavras + lista_white_list
+    for palavra_black_list in lista_black_list:
+        lista_palavras.remove(palavra_black_list)
+
     # print(lista_palavras)
     
     try:
@@ -50,6 +56,7 @@ def processar_lista_para_X_letras(var_X = None):
     arquivo_palavras_com_X_letras.close()
 
     return var_lista_palavras_com_X_letras
+
 
 
 if __name__ == "__main__":

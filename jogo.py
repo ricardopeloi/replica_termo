@@ -1,12 +1,3 @@
-import random
-
-def processar_lista_inexistente(var_X):
-    from processar_listas import processar_lista_para_X_letras
-    var_lista_palavras_com_X_letras = processar_lista_para_X_letras(var_X)
-
-    return var_lista_palavras_com_X_letras
-
-
 def verificar_letra(var_palavra_escolhida, var_palpite_atual, var_posicao, dict_caracteres_especiais):
 
     # Como colorir texto no Terminal, em Python: https://vascosim.medium.com/how-to-print-colored-text-in-python-52f6244e2e30
@@ -60,7 +51,6 @@ def verificar_letra(var_palavra_escolhida, var_palpite_atual, var_posicao, dict_
 
 
 
-
 def criar_novo_palpite(arquivo_palavras, var_palavra_escolhida, var_palpite, var_qtd_letras, var_palpites_anteriores, dict_caracteres_especiais):
 
     while True:
@@ -70,7 +60,17 @@ def criar_novo_palpite(arquivo_palavras, var_palavra_escolhida, var_palpite, var
             print("Inválido! Precisa ter " + var_qtd_letras + " letras." + '\n')
 
         elif var_palpite_atual not in arquivo_palavras:
-            print("Palavra inválida! Selecione palavra existente" + '\n')
+            print("Palavra inválida!")
+            var_escolha = input(">>> Deseja adicioná-la à white list? (S para sim, R para redigitar, qualquer tecla para não) ")  
+            if (var_escolha == "S") + (var_escolha == "s"):
+                from gerir_listas_manuais import adicionar_palavra
+                adicionar_palavra("Lista de Palavras//white_list.txt", var_palpite_atual, print_mensagens = True)
+                arquivo_palavras.append(var_palpite_atual)
+                break
+            if (var_escolha == "R") + (var_escolha == "r"):
+                continue
+            else:
+                break
 
         else:
             break  
@@ -96,11 +96,13 @@ def criar_novo_palpite(arquivo_palavras, var_palavra_escolhida, var_palpite, var
 
 
 
-
 def jogar_termo():
+    from gerir_listas_manuais import consultar_palavras
+    import random
+
     
     while True:
-        var_qtd_letras = input(">>> Quer jogar com quantas letras? (M para voltar ao Menu) ")
+        var_qtd_letras = input(">>> Quer jogar com quantas letras? (\033[1mM\033[0m para voltar ao Menu) ")
         if (var_qtd_letras == 'M') + (var_qtd_letras == 'm'):
             return False
         
@@ -110,12 +112,11 @@ def jogar_termo():
                     print("O número de letras deve ser entre 1 e 15!")          
                 else:
                     try:
-                        arquivo_palavras = open("Lista de Palavras//Listas de Palavras para o Jogo//lista_palavras_" + var_qtd_letras + "_letras.txt", "r", encoding="utf-8") \
-                        .read() \
-                        .split('\n')
+                        arquivo_palavras = consultar_palavras("Lista de Palavras//Listas de Palavras para o Jogo//lista_palavras_" + var_qtd_letras + "_letras.txt")
                     except:
                         try:
-                            arquivo_palavras = processar_lista_inexistente(var_X = int(var_qtd_letras)).split('\n')
+                            from processar_listas import processar_lista_para_X_letras
+                            arquivo_palavras = processar_lista_para_X_letras(var_X = int(var_qtd_letras)).split('\n')
                         except:
                             print("O número de letras deve ser inteiro!" + '\n')
 
@@ -153,28 +154,26 @@ def jogar_termo():
     # print(arquivo_palavras)
 
 
-    var_palavra_escolhida = arquivo_palavras[random.randint(0, len(arquivo_palavras)-2)].upper()
-    # var_palavra_escolhida = "TESTE"
-    # var_palavra_escolhida = "ALÇAR"
-    var_palavra_escolhida = "VÁCUO"
-    # var_palavra_escolhida = "POMPA"
+    var_palavra_escolhida = arquivo_palavras[random.randint(0, len(arquivo_palavras)-2)]
+    var_palavra_escolhida = "ALÇAR"
+    
     # print(var_palavra_escolhida)
 
 
     qtd_max_palpites = int(var_qtd_letras) + 1
     var_palpites_anteriores = ""
     for var_palpite in range(1, qtd_max_palpites+1):
-        print('\n' + "Você tem "+ str(qtd_max_palpites + 1 - var_palpite) + " palpites.")
+        print("Você tem "+ "\033[1m" + str(qtd_max_palpites + 1 - var_palpite) + " palpites" + "\033[0m." + '\n')
         var_resultado_jogo, var_palpites_anteriores = criar_novo_palpite(
             arquivo_palavras_com_e_sem_caracteres_especiais,
-            var_palavra_escolhida,
+            var_palavra_escolhida.upper(),
             var_palpite,
             var_qtd_letras,
             var_palpites_anteriores,
             dict_caracteres_especiais)
         
         if var_resultado_jogo == True:
-            print("PARABÉNS 🎉, VOCÊ ACERTOU EM " + str(var_palpite) + " PALPITE(S)" + '\n')
+            print("PARABÉNS 🎉, VOCÊ ACERTOU EM " + str(var_palpite) + " PALPITE(S)." + '\n')
             return True
 
     print("Você perdeu 😢. A palavra era \033[1m'" + var_palavra_escolhida.upper() +"'\033[0m.")
