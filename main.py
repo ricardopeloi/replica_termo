@@ -18,6 +18,7 @@ def check_and_install_packages(packages):
             print(f"{package} installed successfully.")
 
 
+
 def gerir_listas_manuais(var_caminho, var_tipo_lista, var_tempo_sleep_padrao):
     from gerir_listas_manuais import consultar_palavras, adicionar_palavra, remover_palavra
 
@@ -47,10 +48,7 @@ def gerir_listas_manuais(var_caminho, var_tipo_lista, var_tempo_sleep_padrao):
 
 
 def main():
-    from gerir_listas_manuais import consultar_palavras
-
-
-    lista_libraries = ["time"]
+    lista_libraries = ["time", "pandas"]
     check_and_install_packages(lista_libraries)
     for library in lista_libraries:
         # importlib.import_module(library)
@@ -59,6 +57,10 @@ def main():
         globals()[library] = module_obj
 
     var_tempo_sleep_padrao = 2
+    nome_jogador = "jogador0"
+
+    from gerir_jogadores import criar_novo_jogador, ver_historico
+    criar_novo_jogador(nome_jogador, sobrescrever = False)
 
     # MENU
     while True:
@@ -89,11 +91,12 @@ def main():
             time.sleep(var_tempo_sleep_padrao) # type: ignore # ver seção check_and_install_packages
 
         elif var_escolha == '3':
-            print("---Em construção!---" + '\n')
+            ver_historico(nome_jogador)
             time.sleep(var_tempo_sleep_padrao) # type: ignore # ver seção check_and_install_packages
 
         elif var_escolha == '4':
             gerir_listas_manuais("Lista de Palavras//black_list.txt", "black list", var_tempo_sleep_padrao)
+            time.sleep(var_tempo_sleep_padrao) # type: ignore # ver seção check_and_install_packages
             
         elif var_escolha == '5':
             gerir_listas_manuais("Lista de Palavras//white_list.txt", "white list", var_tempo_sleep_padrao)

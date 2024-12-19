@@ -108,8 +108,14 @@ def criar_novo_palpite(arquivo_palavras, var_palavra_escolhida, var_palpite, var
 
 
 
-def jogar_termo():
+def jogar_termo(nome_jogador = "jogador0"):
     from gerir_listas_manuais import consultar_palavras
+    from gerir_jogadores import criar_novo_resultado
+
+    from main import check_and_install_packages
+    lista_libraries = ["datetime", "random"]
+    check_and_install_packages(lista_libraries)
+    import datetime
     import random
 
     
@@ -167,7 +173,6 @@ def jogar_termo():
 
 
     var_palavra_escolhida = arquivo_palavras[random.randint(0, len(arquivo_palavras)-2)]
-    var_palavra_escolhida = "domar"
     
     # print(var_palavra_escolhida)
 
@@ -186,8 +191,12 @@ def jogar_termo():
         
         if var_resultado_jogo == True:
             print("PARABÉNS 🎉, VOCÊ ACERTOU EM " + str(var_palpite) + " PALPITE(S)." + '\n')
+            
+            criar_novo_resultado(nome_jogador, [datetime.datetime.now(), var_palavra_escolhida.upper(), var_palpite, "Vitória"])
+            
             return True
 
+    criar_novo_resultado(nome_jogador, [datetime.datetime.now(), var_palavra_escolhida.upper(), var_palpite, "Derrota"])
     print("Você perdeu 😢. A palavra era \033[1m'" + var_palavra_escolhida.upper() +"'\033[0m.")
     
 
