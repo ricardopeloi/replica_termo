@@ -6,6 +6,13 @@ def verificar_letra(var_palavra_escolhida, var_palpite_atual, var_posicao, dict_
     var_cod_acerto_letra_nao_posicao = 103  # texto normal, fundo amarelo
     var_cod_normal = 0                      # fundo sem formatação
 
+    var_palavra_escolhida_sem_caracteres_especiais = ""
+    for letra in var_palavra_escolhida:
+        var_palavra_escolhida_sem_caracteres_especiais = var_palavra_escolhida_sem_caracteres_especiais + dict_caracteres_especiais.get(letra, letra)
+    
+    var_palpite_atual_sem_caracteres_especiais = ""
+    for letra in var_palpite_atual:
+        var_palpite_atual_sem_caracteres_especiais = var_palpite_atual_sem_caracteres_especiais + dict_caracteres_especiais.get(letra, letra)
 
     # CASO EM QUE A LETRA ESTÁ CERTA, NA POSIÇÃO CERTA
     if dict_caracteres_especiais.get(var_palavra_escolhida[var_posicao], var_palavra_escolhida[var_posicao]) == dict_caracteres_especiais.get(var_palpite_atual[var_posicao], var_palpite_atual[var_posicao]):
@@ -13,40 +20,45 @@ def verificar_letra(var_palavra_escolhida, var_palpite_atual, var_posicao, dict_
     
     
     else:
-        for letra in var_palavra_escolhida:
+        for letra in var_palavra_escolhida_sem_caracteres_especiais:
             # CASO EM QUE A LETRA ESTÁ CERTA, NA POSIÇÃO ERRADA
             if (dict_caracteres_especiais.get(var_palpite_atual[var_posicao], var_palpite_atual[var_posicao]) == dict_caracteres_especiais.get(letra, letra)): 
 
                 # SE A LETRA SÓ APARECE UMA VEZ NA PALAVRA ESCOLHIDA, E JÁ ACERTEI, PINTAR DE BRANCO
-                if var_palavra_escolhida.count(var_palpite_atual[var_posicao]) == 1:
+                if var_palavra_escolhida_sem_caracteres_especiais.count(var_palpite_atual[var_posicao]) == 1:
                     for var_posicao_letra_ja_identificada in range(len(var_palavra_escolhida)):
                         if  (dict_caracteres_especiais.get(var_palavra_escolhida[var_posicao_letra_ja_identificada], var_palavra_escolhida[var_posicao_letra_ja_identificada]) == dict_caracteres_especiais.get(var_palpite_atual[var_posicao], var_palpite_atual[var_posicao])) * \
                             (dict_caracteres_especiais.get(var_palavra_escolhida[var_posicao_letra_ja_identificada], var_palavra_escolhida[var_posicao_letra_ja_identificada]) == dict_caracteres_especiais.get(var_palpite_atual[var_posicao_letra_ja_identificada], var_palpite_atual[var_posicao_letra_ja_identificada])):
-                            
+                            # print("ok")
                             return 0, '\033[' + str(var_cod_normal) + 'm'+ ' ' + var_palpite_atual[var_posicao] + ' ' + '\033[' + str(var_cod_normal) + 'm' + ' ' 
                 
                     # SE A LETRA SÓ APARECE UMA VEZ NA PALAVRA ESCOLHIDA, MAS NÃO ACERTEI, PINTAR DE AMARELO
-                    if var_palpite_atual.count(var_palpite_atual[var_posicao]) == 1:
+                    if var_palpite_atual_sem_caracteres_especiais.count(var_palpite_atual[var_posicao]) == 1:
+                        # print("ok")
                         return 0, '\033[' + str(var_cod_acerto_letra_nao_posicao) + 'm'+ ' ' + var_palpite_atual[var_posicao] + ' ' + '\033[' + str(var_cod_normal) + 'm' + ' '
                     
                     # EXCETO NO CASO EM QUE A LETRA APARECE MAIS DE UMA VEZ NA PALAVRA PALPITADA, PINTAR APENAS A PRIMEIRA DE AMARELO E O RESTO DE BRANCO
                     else:
                         lista_posicoes_letra_escolhida = []
                         for posicao_letra_palpite, letra_palpite in enumerate(var_palpite_atual):
-                            if letra == letra_palpite:
+                            if dict_caracteres_especiais.get(letra, letra) == dict_caracteres_especiais.get(letra_palpite, letra_palpite):
                                 lista_posicoes_letra_escolhida.append(posicao_letra_palpite)
                         if var_posicao == lista_posicoes_letra_escolhida[0]:
+                            # print("ok")
                             return 0, '\033[' + str(var_cod_acerto_letra_nao_posicao) + 'm'+ ' ' + var_palpite_atual[var_posicao] + ' ' + '\033[' + str(var_cod_normal) + 'm' + ' '
                         else:
+                            # print("ok")
                             return 0, '\033[' + str(var_cod_normal) + 'm'+ ' ' + var_palpite_atual[var_posicao] + ' ' + '\033[' + str(var_cod_normal) + 'm' + ' '
                    
                 
                 # SE NÃO ACERTEI A LETRA AINDA, PINTAR DE AMARELO
                 else:
+                    # print("ok")
                     return 0, '\033[' + str(var_cod_acerto_letra_nao_posicao) + 'm'+ ' ' + var_palpite_atual[var_posicao] + ' ' + '\033[' + str(var_cod_normal) + 'm' + ' '
                 
                 
     # CASO EM QUE A LETRA ESTÁ ERRADA, NÃO TEM ELA NA PALAVRA
+    # print("ok")
     return 0, '\033[' + str(var_cod_normal) + 'm'+ ' ' + var_palpite_atual[var_posicao] + ' ' + '\033[' + str(var_cod_normal) + 'm' + ' '
 
 
@@ -155,7 +167,7 @@ def jogar_termo():
 
 
     var_palavra_escolhida = arquivo_palavras[random.randint(0, len(arquivo_palavras)-2)]
-    var_palavra_escolhida = "ALÇAR"
+    var_palavra_escolhida = "domar"
     
     # print(var_palavra_escolhida)
 
