@@ -34,8 +34,21 @@ def verificar_letra(var_palavra_escolhida, var_palpite_atual, var_posicao, dict_
                             
                             return 0, '\033[' + str(var_cod_normal) + 'm'+ ' ' + var_palpite_atual[var_posicao] + ' ' + '\033[' + str(var_cod_normal) + 'm' + ' ' 
                 
-                # SE A LETRA SÓ APARECE UMA VEZ NA PALAVRA ESCOLHIDA, MAS NÃO ACERTEI, PINTAR DE AMARELO
-                    return 0, '\033[' + str(var_cod_acerto_letra_nao_posicao) + 'm'+ ' ' + var_palpite_atual[var_posicao] + ' ' + '\033[' + str(var_cod_normal) + 'm' + ' '
+                    # SE A LETRA SÓ APARECE UMA VEZ NA PALAVRA ESCOLHIDA, MAS NÃO ACERTEI, PINTAR DE AMARELO
+                    if var_palpite_atual.count(var_palpite_atual[var_posicao]) == 1:
+                        return 0, '\033[' + str(var_cod_acerto_letra_nao_posicao) + 'm'+ ' ' + var_palpite_atual[var_posicao] + ' ' + '\033[' + str(var_cod_normal) + 'm' + ' '
+                    
+                    # EXCETO NO CASO EM QUE A LETRA APARECE MAIS DE UMA VEZ NA PALAVRA PALPITADA, PINTAR APENAS A PRIMEIRA DE AMARELO E O RESTO DE BRANCO
+                    else:
+                        lista_posicoes_letra_escolhida = []
+                        for posicao_letra_palpite, letra_palpite in enumerate(var_palpite_atual):
+                            if letra == letra_palpite:
+                                lista_posicoes_letra_escolhida.append(posicao_letra_palpite)
+                        if var_posicao == lista_posicoes_letra_escolhida[0]:
+                            return 0, '\033[' + str(var_cod_acerto_letra_nao_posicao) + 'm'+ ' ' + var_palpite_atual[var_posicao] + ' ' + '\033[' + str(var_cod_normal) + 'm' + ' '
+                        else:
+                            return 0, '\033[' + str(var_cod_normal) + 'm'+ ' ' + var_palpite_atual[var_posicao] + ' ' + '\033[' + str(var_cod_normal) + 'm' + ' '
+                   
                 
                 # SE NÃO ACERTEI A LETRA AINDA, PINTAR DE AMARELO
                 else:
@@ -137,8 +150,7 @@ def jogar_termo():
             # var_lista_palavras_com_X_letras = var_lista_palavras_com_X_letras + palavra_sem_caracteres_especiais.lower() + '\n'
             arquivo_palavras_com_e_sem_caracteres_especiais.append(palavra_sem_caracteres_especiais.lower())
     
-
-    print(arquivo_palavras)
+    # print(arquivo_palavras)
 
 
     var_palavra_escolhida = arquivo_palavras[random.randint(0, len(arquivo_palavras)-2)].upper()
