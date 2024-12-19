@@ -1818,6 +1818,7 @@ zunir
 único
 útero
 altos
+alças
 bisão
 cubar
 cunha
@@ -1832,4 +1833,5 @@ risos
 risão
 sunga
 teses
+vasos
 vezes
