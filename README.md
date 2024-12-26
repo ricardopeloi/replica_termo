@@ -24,13 +24,17 @@ Por fim, a melhor solução encontrada até o momento é uma lista de palavras u
     - ~~No meio do jogo, quando o jogador colocar uma palavra inválida, perguntar se o jogador quer adicioná-la à white list~~
 - Adicionar resultado do jogo ao histórico
     - ~~Criar histórico por jogador (criar um arquivo com o nome do jogador)~~
-    - Adaptar a tabela de jogos do jogador para uma tabela geral, com as colunas:
+    - ~~Adaptar a tabela de jogos do jogador para uma tabela geral, com as colunas~~:
         - ID do jogo
         - Timestamp
         - Nome do jogador
         - Cada um dos palpites do jogador
         - Quantidade de jogadas total
+    - Corrigir problema de enconding (na palavra 'Vitória')
     - Criar uma função que identifica se o jogador ganhou ou não, com base na quantidade de palpites e quantidade de jogadas total
-    - Permitir ver todos os jogadores, assim como escolher quem é o usuário que está jogando
+    - ~~Permitir ver todos os jogadores, assim como escolher quem é o usuário que está jogando~~
     - Criar um gráfico dos resultados do jogador
 - Adicionar regras do jogo ao Readme
+
+# BUGs
+- Quando vai jogar com 3 letras, e coloca as palavras "CÉU" e "MAR"

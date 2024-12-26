@@ -57,16 +57,15 @@ def main():
         globals()[library] = module_obj
 
     var_tempo_sleep_padrao = 2
-    nome_jogador = "jogador0"
 
-    from gerir_jogadores import criar_novo_jogador, ver_historico
-    criar_novo_jogador(nome_jogador, sobrescrever = False)
+    from gerir_historico import criar_novo_historico, ver_historico, ver_jogadores
+    criar_novo_historico(sobrescrever = False)
+    var_nome_jogador = "jogador0"
 
     # MENU
     while True:
         print(
             '\n'
-            
             "=========== MENU ===========" + '\n'
             "\033[1m1\033[0m: começar novo jogo" + '\n'
             "\033[1m2\033[0m: importar novas palavras" + '\n'
@@ -81,7 +80,7 @@ def main():
 
         if var_escolha == '1':
             from jogo import jogar_termo
-            jogar_termo()
+            var_nome_jogador = jogar_termo(var_nome_jogador)
             time.sleep(var_tempo_sleep_padrao) # type: ignore # ver seção check_and_install_packages
 
         elif var_escolha == '2':
@@ -91,7 +90,22 @@ def main():
             time.sleep(var_tempo_sleep_padrao) # type: ignore # ver seção check_and_install_packages
 
         elif var_escolha == '3':
-            ver_historico(nome_jogador)
+            var_lista_jogadores = ver_jogadores()
+            if var_lista_jogadores != False:
+                print("Os jogadores com histórico disponível são: ")
+                print(var_lista_jogadores)
+                while True:
+                    var_jogador = input(">>> Deseja ver o Histórico de qual jogador? (\033[1mH\033[0m para ver Histórico geral) ")
+                    if (var_jogador == "H") + (var_jogador == "h"):
+                        tabela_jogador = ver_historico(False)
+                        break
+                    elif var_jogador in var_lista_jogadores:
+                        tabela_jogador = ver_historico(var_jogador)
+                        break
+                    else:
+                        print("Jogador indisponível!")
+                        pass
+                print(tabela_jogador)
             time.sleep(var_tempo_sleep_padrao) # type: ignore # ver seção check_and_install_packages
 
         elif var_escolha == '4':
