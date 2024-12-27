@@ -68,10 +68,9 @@ def main():
             '\n'
             "=========== MENU ===========" + '\n'
             "\033[1m1\033[0m: começar novo jogo" + '\n'
-            "\033[1m2\033[0m: importar novas palavras" + '\n'
-            "\033[1m3\033[0m: ver histórico de jogos" + '\n'
-            "\033[1m4\033[0m: adicionar e/ou remover palavras da black list" + '\n'
-            "\033[1m5\033[0m: adicionar e/ou remover palavras da white list" + '\n'
+            "\033[1m2\033[0m: ver histórico de jogos" + '\n'
+            "\033[1m3\033[0m: adicionar e/ou remover palavras da black list" + '\n'
+            "\033[1m4\033[0m: adicionar e/ou remover palavras da white list" + '\n'
             '\n'
             "\033[1mS\033[0m: Sair" + '\n'
         )
@@ -84,12 +83,6 @@ def main():
             time.sleep(var_tempo_sleep_padrao) # type: ignore # ver seção check_and_install_packages
 
         elif var_escolha == '2':
-            from processar_listas import processar_lista_para_X_letras
-            processar_lista_para_X_letras()
-            print('\n' + "Arquivo com as palavras importado!" + '\n')
-            time.sleep(var_tempo_sleep_padrao) # type: ignore # ver seção check_and_install_packages
-
-        elif var_escolha == '3':
             var_lista_jogadores = ver_jogadores()
             if var_lista_jogadores.any() != False:
                 print("Os jogadores com histórico disponível são: ")
@@ -110,11 +103,11 @@ def main():
                 gerar_grafico(tabela_jogador, var_nome_jogador_historico)
             time.sleep(var_tempo_sleep_padrao) # type: ignore # ver seção check_and_install_packages
 
-        elif var_escolha == '4':
+        elif var_escolha == '3':
             gerir_listas_manuais("Lista de Palavras//black_list.txt", "black list", var_tempo_sleep_padrao)
             time.sleep(var_tempo_sleep_padrao) # type: ignore # ver seção check_and_install_packages
             
-        elif var_escolha == '5':
+        elif var_escolha == '4':
             gerir_listas_manuais("Lista de Palavras//white_list.txt", "white list", var_tempo_sleep_padrao)
             time.sleep(var_tempo_sleep_padrao) # type: ignore # ver seção check_and_install_packages
 

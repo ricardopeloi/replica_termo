@@ -179,6 +179,7 @@ def jogar_termo(var_nome_jogador = "jogador0"):
 
 
     var_palavra_escolhida = arquivo_palavras[random.randint(0, len(arquivo_palavras)-2)]
+    var_palavra_escolhida = "pedra"
     
     # print(var_palavra_escolhida)
 
