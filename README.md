@@ -22,17 +22,17 @@ Por fim, a melhor solução encontrada até o momento é uma lista de palavras u
     - ~~Criar arquivo com palavras da white list~~
     - ~~No processamento da white list, adicionar ao arquivo da lista de palavras padrão~~
     - ~~No meio do jogo, quando o jogador colocar uma palavra inválida, perguntar se o jogador quer adicioná-la à white list~~
-- Adicionar resultado do jogo ao histórico
+- ~~Adicionar resultado do jogo ao histórico~~
     - ~~Criar histórico por jogador (criar um arquivo com o nome do jogador)~~
     - ~~Adaptar a tabela de jogos do jogador para uma tabela geral, com as colunas~~:
-        - ID do jogo
-        - Timestamp
-        - Nome do jogador
-        - Cada um dos palpites do jogador
-        - Quantidade de jogadas total
+        - ~~ID do jogo~~
+        - ~~Timestamp~~
+        - ~~Nome do jogador~~
+        - ~~Cada um dos palpites do jogador~~
+        - ~~Quantidade de jogadas total~~
     - ~~Corrigir problema de enconding (na palavra 'Vitória')~~
     - ~~Permitir ver todos os jogadores, assim como escolher quem é o usuário que está jogando~~
-    - Criar um gráfico dos resultados do jogador
+    - ~~Criar um gráfico dos resultados do jogador~~
 - Adicionar regras do jogo ao Readme
 
 # O que aprendi com esse projeto

@@ -58,7 +58,7 @@ def main():
 
     var_tempo_sleep_padrao = 2
 
-    from gerir_historico import criar_novo_historico, ver_historico, ver_jogadores
+    from gerir_historico import criar_novo_historico, ver_historico, ver_jogadores, gerar_grafico
     criar_novo_historico(sobrescrever = False)
     var_nome_jogador = "jogador0"
 
@@ -94,18 +94,20 @@ def main():
             if var_lista_jogadores.any() != False:
                 print("Os jogadores com histórico disponível são: ")
                 print(var_lista_jogadores)
+                print()
                 while True:
-                    var_jogador = input(">>> Deseja ver o Histórico de qual jogador? (\033[1mH\033[0m para ver Histórico geral) ")
-                    if (var_jogador == "H") + (var_jogador == "h"):
+                    var_nome_jogador_historico = input(">>> Deseja ver o Histórico de qual jogador? (\033[1mH\033[0m para ver Histórico geral) ")
+                    if (var_nome_jogador_historico == "H") + (var_nome_jogador_historico == "h"):
                         tabela_jogador = ver_historico(False)
                         break
-                    elif var_jogador in var_lista_jogadores:
-                        tabela_jogador = ver_historico(var_jogador)
+                    elif var_nome_jogador_historico in var_lista_jogadores:
+                        tabela_jogador = ver_historico(var_nome_jogador_historico)
                         break
                     else:
                         print("Jogador indisponível!")
                         pass
-                print(tabela_jogador)
+                # print(tabela_jogador)
+                gerar_grafico(tabela_jogador, var_nome_jogador_historico)
             time.sleep(var_tempo_sleep_padrao) # type: ignore # ver seção check_and_install_packages
 
         elif var_escolha == '4':

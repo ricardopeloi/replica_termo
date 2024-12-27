@@ -73,7 +73,7 @@ def criar_novo_palpite(arquivo_palavras, var_palavra_escolhida, var_palpite, var
 
         elif var_palpite_atual not in arquivo_palavras:
             print("Palavra inválida!")
-            var_escolha = input(">>> Deseja adicioná-la à white list? (S para sim, R para redigitar, qualquer tecla para não) ")  
+            var_escolha = input(">>> Deseja adicioná-la à white list? (\033[1mS\033[0m para sim, \033[1mR\033[0m para redigitar, qualquer tecla para não) ")  
             if (var_escolha == "S") + (var_escolha == "s"):
                 from gerir_listas_manuais import adicionar_palavra
                 adicionar_palavra("Lista de Palavras//white_list.txt", var_palpite_atual, print_mensagens = True)
@@ -120,8 +120,7 @@ def jogar_termo(var_nome_jogador = "jogador0"):
     import datetime
     import random
 
-    print("O jogador atual é o " + var_nome_jogador)
-    var_escolha_jogador = input(">>> Deseja alterar? \033[1mS\033[0m para Sim, qualquer tecla para Não: ")
+    var_escolha_jogador = input(">>> O jogador atual é o \033[1m'" + var_nome_jogador + "\033[0m'. Deseja alterar? \033[1mS\033[0m para Sim, qualquer tecla para Não: ")
     if (var_escolha_jogador == "S") + (var_escolha_jogador == "s"):
         while True:
             var_nome_jogador = input(">>> Insira seu \033[1mnome de jogador\033[0m: ")
@@ -184,7 +183,6 @@ def jogar_termo(var_nome_jogador = "jogador0"):
 
 
     var_palavra_escolhida = arquivo_palavras[random.randint(0, len(arquivo_palavras)-2)]
-    var_palavra_escolhida = "SKATE"
     
     # print(var_palavra_escolhida)
 
@@ -211,12 +209,13 @@ def jogar_termo(var_nome_jogador = "jogador0"):
     if var_resultado_jogo == "Derrota":
         print("Você perdeu 😢. A palavra era \033[1m'" + var_palavra_escolhida.upper() +"'\033[0m.")
 
-    while var_num_palpite <= 15:
+    var_num_palpite_resultado = var_num_palpite
+    while var_num_palpite < 15:
         lista_palpites.append(None)
         var_num_palpite = var_num_palpite + 1
 
     # Data, Jogador, Palavra, Qtd palpites, Resultado, Palpite 1,  Palpite 2, Palpite 3,  Palpite 4, Palpite 5,  Palpite 6, Palpite 7,  Palpite 8, Palpite 9,  Palpite 10, Palpite 11,  Palpite 12, Palpite 13,  Palpite 14, Palpite 15  
-    criar_novo_resultado([datetime.datetime.now(), var_nome_jogador, var_palavra_escolhida.upper(), var_resultado_jogo] + lista_palpites)
+    criar_novo_resultado([datetime.datetime.now(), var_nome_jogador, var_palavra_escolhida.upper(), var_num_palpite_resultado, var_resultado_jogo] + lista_palpites)
     
     return var_nome_jogador
 
