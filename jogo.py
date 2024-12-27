@@ -120,7 +120,7 @@ def jogar_termo(var_nome_jogador = "jogador0"):
     import datetime
     import random
 
-    var_escolha_jogador = input(">>> O jogador atual é o \033[1m'" + var_nome_jogador + "\033[0m'. Deseja alterar? \033[1mS\033[0m para Sim, qualquer tecla para Não: ")
+    var_escolha_jogador = input(">>> O jogador atual é o \033[1m'" + var_nome_jogador + "\033[0m'. Deseja alterar? (\033[1mS\033[0m para Sim, qualquer tecla para Não) ")
     if (var_escolha_jogador == "S") + (var_escolha_jogador == "s"):
         while True:
             var_nome_jogador = input(">>> Insira seu \033[1mnome de jogador\033[0m: ")

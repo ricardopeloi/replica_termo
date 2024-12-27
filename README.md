@@ -11,7 +11,6 @@ Tentei buscar por listas de palavras que contivessem as palavras mais comuns/fre
 Por fim, a melhor solução encontrada até o momento é uma lista de palavras utilizada para a metodologia de criação de senhas chamada [**Diceware**](https://github.com/thoughtworks/dadoware/blob/master/fontes/com_acentos.txt). Inclusive essa metodologia é bem interessante, pois **usa palavras comuns para gerar senhas fortes!** Fascinante e útil para o meu projeto.
 
 
-
 # TO-DO
 - ~~Verificar se a palavra inserida é válida (usar a própria lista de palavras)~~
 - ~~Verificar letras com caracteres especiais~~
@@ -36,8 +35,8 @@ Por fim, a melhor solução encontrada até o momento é uma lista de palavras u
 - Adicionar regras do jogo ao Readme
 
 # O que aprendi com esse projeto
-- Tudo que eu havia feito em Python até então era através de Jupyter notebooks. Nesse projeto usei arquivos em .py, e interações (do jogador) pelo Terminal
-- Colorir o Terminal
-- Integrar as funções de diferentes arquivos .py entre eles, ou seja, um arquivo para a função principal, outro para o jogo, etc
-- Pratiquei muito o uso de Git, mantendo sempre meus arquivos atualizados e compartilhando a evolução do projeto, passo a passo
-- Uso de Markdown, com esse Readme
+1. Tudo que eu havia feito em Python até então era através de Jupyter notebooks. Nesse projeto usei arquivos em .py, e interações (do jogador) pelo Terminal. Isso demandou que eu configurasse um ambiente
+2. Integrar as funções de diferentes arquivos .py entre eles, ou seja, um arquivo para a função principal, outro para o jogo, etc
+3. Pratiquei muito o uso de Git, mantendo sempre meus arquivos atualizados e compartilhando a evolução do projeto, passo a passo
+4. Colorir o Terminal
+5. Uso de Markdown, com esse Readme

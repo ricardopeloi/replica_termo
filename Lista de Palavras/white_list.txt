@@ -25,3 +25,4 @@ teses
 toda
 vasos
 vezes
+brega
