@@ -130,29 +130,25 @@ def jogar_termo(var_nome_jogador = "jogador0"):
                 break
     
     while True:
-        var_qtd_letras = input(">>> Quer jogar com quantas letras? (\033[1mM\033[0m para voltar ao Menu) ")
+        var_qtd_letras = input(">>> Quer jogar com quantas letras? (\033[1mM\033[0m para voltar ao Menu, ou \033[1mum número de 3 a 15\033[0m, ou qualquer tecla para jogar com \033[1m5 letras\033[0m) ")
         if (var_qtd_letras == 'M') + (var_qtd_letras == 'm'):
             return False
         
+        elif var_qtd_letras.isdigit(): # verifica se é um dígito > 0
+            if (int(var_qtd_letras) < 3) + (int(var_qtd_letras) > 15) :
+                print("O número de letras deve ser entre 3 e 15!" + '\n')
+            else:
+                break
         else:
-            try:
-                if (int(var_qtd_letras) <= 0) * (int(var_qtd_letras) > 15) :
-                    print("O número de letras deve ser entre 1 e 15!")          
-                else:
-                    try:
-                        arquivo_palavras = consultar_palavras("Lista de Palavras//Listas de Palavras para o Jogo//lista_palavras_" + var_qtd_letras + "_letras.txt")
-                    except:
-                        try:
-                            from processar_listas import processar_lista_para_X_letras
-                            arquivo_palavras = processar_lista_para_X_letras(var_X = int(var_qtd_letras)).split('\n')
-                        except:
-                            print("O número de letras deve ser inteiro!" + '\n')
+            var_qtd_letras = 5
+            break
+        
+    try:
+        arquivo_palavras = consultar_palavras("Lista de Palavras//Listas de Palavras para o Jogo//lista_palavras_" + var_qtd_letras + "_letras.txt")
+    except:
+        from processar_listas import processar_lista_para_X_letras
+        arquivo_palavras = processar_lista_para_X_letras(var_X = int(var_qtd_letras)).split('\n')
 
-                            return False
-
-                    break
-            except:
-                continue
     
     dict_caracteres_especiais = {
         "Á": "A",

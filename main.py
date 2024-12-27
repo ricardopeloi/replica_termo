@@ -119,13 +119,13 @@ def main():
             time.sleep(var_tempo_sleep_padrao) # type: ignore # ver seção check_and_install_packages
 
         elif (var_escolha == 'S') + (var_escolha == 's'):
-            print('\n' + "Obrigado por jogar!" + "\n")
+            print('\n' + "\033[1m\033[31mObrigado por jogar! 💗\033[0m" + "\n")
             time.sleep(var_tempo_sleep_padrao) # type: ignore # ver seção check_and_install_packages
             break
 
 
         else:
-            print('\n' + "Opção inválida!" +  '\n')
+            print('\n' + "\033[3mOpção inválida!\033[1m" +  '\n')
             time.sleep(var_tempo_sleep_padrao) # type: ignore # ver seção check_and_install_packages
 
 
