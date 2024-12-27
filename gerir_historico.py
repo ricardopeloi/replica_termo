@@ -37,7 +37,9 @@ def criar_novo_resultado(resultado):
         ignore_index = False
     )
     
-    tabela_jogador.to_csv("Histórico dos jogadores//Histórico.csv", index = False, encoding="utf-8")
+    # tabela_jogador.to_csv("Histórico dos jogadores//Histórico.csv", index = False, encoding="utf-8")
+    tabela_jogador.to_csv("Histórico dos jogadores//Histórico.csv", index = False, encoding="ISO-8859-2")
+    
 
     # print(len(tabela_jogador))
     # print(tabela_jogador)
@@ -46,10 +48,12 @@ def criar_novo_resultado(resultado):
 
 def ver_historico(var_nome_jogador = False):
     try:
-        tabela_jogador = pd.read_csv("Histórico dos jogadores//Histórico.csv", encoding="utf-8")
+        # tabela_jogador = pd.read_csv("Histórico dos jogadores//Histórico.csv", encoding="utf-8")
+        tabela_jogador = pd.read_csv("Histórico dos jogadores//Histórico.csv", encoding="ISO-8859-2")
     except:
         criar_novo_historico()
-        tabela_jogador = pd.read_csv("Histórico dos jogadores//Histórico.csv", encoding="utf-8")
+        # tabela_jogador = pd.read_csv("Histórico dos jogadores//Histórico.csv", encoding="utf-8")
+        tabela_jogador = pd.read_csv("Histórico dos jogadores//Histórico.csv", encoding="ISO-8859-2")
 
     if var_nome_jogador == False:
         return tabela_jogador
@@ -61,7 +65,7 @@ def ver_historico(var_nome_jogador = False):
             return tabela_jogador
         except:
             print("Este jogador não existe!")
-            return False
+            return [False]
 
     
 

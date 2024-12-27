@@ -30,11 +30,14 @@ Por fim, a melhor solução encontrada até o momento é uma lista de palavras u
         - Nome do jogador
         - Cada um dos palpites do jogador
         - Quantidade de jogadas total
-    - Corrigir problema de enconding (na palavra 'Vitória')
-    - Criar uma função que identifica se o jogador ganhou ou não, com base na quantidade de palpites e quantidade de jogadas total
+    - ~~Corrigir problema de enconding (na palavra 'Vitória')~~
     - ~~Permitir ver todos os jogadores, assim como escolher quem é o usuário que está jogando~~
     - Criar um gráfico dos resultados do jogador
 - Adicionar regras do jogo ao Readme
 
-# BUGs
-- Quando vai jogar com 3 letras, e coloca as palavras "CÉU" e "MAR"
+# O que aprendi com esse projeto
+- Tudo que eu havia feito em Python até então era através de Jupyter notebooks. Nesse projeto usei arquivos em .py, e interações (do jogador) pelo Terminal
+- Colorir o Terminal
+- Integrar as funções de diferentes arquivos .py entre eles, ou seja, um arquivo para a função principal, outro para o jogo, etc
+- Pratiquei muito o uso de Git, mantendo sempre meus arquivos atualizados e compartilhando a evolução do projeto, passo a passo
+- Uso de Markdown, com esse Readme

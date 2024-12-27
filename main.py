@@ -91,7 +91,7 @@ def main():
 
         elif var_escolha == '3':
             var_lista_jogadores = ver_jogadores()
-            if var_lista_jogadores != False:
+            if var_lista_jogadores.any() != False:
                 print("Os jogadores com histórico disponível são: ")
                 print(var_lista_jogadores)
                 while True:
