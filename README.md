@@ -1,16 +1,32 @@
-# Regras do jogo
-Bem vindo(a) ao jogo **_Replica Termo_**!
+# Bem vindo(a) ao jogo **_Replica Termo_**!
 
-Caso pareça familiar para você, é porque me inspirei fortemente no queridíssimo [Term.ooo](https://term.ooo/). Esse é um joguinho com regras específicas, na qual o jogador deve acertar qual é a palavra do dia a partir dessas regras.
+Caso pareça familiar para você, é porque me inspirei fortemente no queridíssimo [Termo](https://term.ooo/). Antes de mais nada, parabéns ao criador desse jogo, o **Fernando Serboncini**. Eu jogo Termo todos os dias, e me divirto e aprendo muito!
 
-O jogo é atualizado diariamente, todas as palavras possuem 5 letras, e são 3 modos de jogo:
+Esse é um joguinho com regras específicas, na qual o jogador deve acertar qual é a palavra do dia a partir dessas regras.
+
+O Termo é atualizado diariamente, todas as palavras possuem 5 letras, e são 3 modos de jogo:
 1. Acertar _uma_ palavra apenas, em 6 tentativas, o que é chamado de _Termo_
 2. Acertar _duas_ palavras ao mesmo tempo, em 7 tentativas, o que é chamado de _Dueto_
 3. Acertar _quatro_ palavras ao mesmo tempo, em 9 tentativas, o que é chamado de _Quarteto_
 
-No meu jogo **_Replica Termo_**, temos apenas a opção de jogar a opção de uma palavra, contudo, não é necessário aguardar atualizações diárias: você pode jogar quantas vezes quiser! E se você quiser jogar com uma quantidade diferente de 5 letras, você pode!
+Já no meu jogo **_Replica Termo_**, temos apenas a opção de jogar a opção de uma palavra, contudo, não é necessário aguardar atualizações diárias: você pode jogar quantas vezes quiser! E se você quiser jogar com uma quantidade diferente de 5 letras, você pode!
 
-Ao executar o jogo, o jogador se depara com 5 opções. Toda a interação é feita via Terminal, e todos os textos que o jogador precisa interagir são antecedidos por **>>>**.
+É claro que o Termo original é bem mais bonito, completo e redondo. Parabéns ao seu autor! Por enquanto, o meu projeto é uma mera réplica, mas que me rendeu uma série de aprendizados. E eu me diverti criando, além de jogar o meu próprio jogo!
+
+# O que aprendi com esse projeto
+1. Tudo que eu havia feito em Python, na minha vida, até então, foi através de **Jupyter notebooks** ([veja minha biblioteca de funções de Data Science, por exemplo](https://github.com/ricardopeloi/minha_biblioteca_python/tree/main)). Nesse projeto usei arquivos em .py, e interações (do jogador) pelo Terminal. Isso demandou que eu configurasse um ambiente;
+2. Integrar as funções de diferentes arquivos .py entre eles, ou seja, um arquivo para a função principal, outro para o jogo, outro para o histórico, etc. Todas as integrações de código que havia feito até então eram bibliotecas "padrão" do Python, como Pandas, Matplotlib, Keras, etc. Agora tenho como usar meus próprios pacotinhos, e talvez até eu consiga transformar minha biblioteca de funções em algo mais robusto do que um notebook que eu sempre fico picotando. Inclusive, usei uma das minhas funções já prontas para [criar o gráfico aqui do jogo](#regras2);
+3. Pratiquei muito o uso de versionamento em Git, mantendo sempre meus arquivos atualizados e compartilhando a evolução do projeto aqui no Github, passo a passo. Até a conclusão do projeto (27/12/2024), foram cerca de 30 commits;
+4. [Colorir o Terminal](#regras1). Achei que não seria possível e teria que criar uma interface gráfica para o jogo, mas o Terminal permitiu atender perfeitamente o que eu imaginava no início. Ainda não aprendi a fazer uma interface gráfica, [fica para o próximo projeto](#to_do_emaberto);
+5. Uso de Markdown, com esse Readme. Aprendi a usar links internos (_âncoras_), diversos tipos de formatação, inserção de imagens e links, bullet points (numerados ou não) e criar minha [To-Do list](#to_do) (cujos itens foram sobreescritos conforme avancei no projeto).
+
+# Regras do jogo
+
+Ao executar o jogo, o jogador se depara com 4 opções. Toda a interação é feita via Terminal, e todos os textos que o jogador precisa interagir são antecedidos por **>>>**.
+
+<p align="center">
+  <img src="https://github.com/ricardopeloi/replica_termo/blob/main/Imagens%20Readme/Como_jogar_06.png?raw=true" width="300" title="Visão do menu do jogo no Terminal">
+</p>
 
 ## <a name="regras1"></a>1: começar novo jogo
 Esse é o modo padrão, em que o jogador inicia um novo jogo.
@@ -39,7 +55,7 @@ Se acertar a palavra dentro do número de palpites disponíveis, você ganhou �
   <img src="https://github.com/ricardopeloi/replica_termo/blob/main/Imagens%20Readme/Como_jogar_02.png?raw=true" width="300" title="Resultado positivo de um jogo">
 </p>
 
-No final do jogo, todos os palpites usados e os dados do jogo (incluindo o nome do jogador escolhido)[são salvos em um arquivo CSV](#regras2).
+No final do jogo, todos os palpites usados e os dados do jogo (incluindo o nome do jogador escolhido) [são salvos em um arquivo CSV](#regras2).
 
 
 ## <a name="regras2"></a>2: ver histórico de jogos
@@ -84,7 +100,7 @@ Uma alternativa é usar o **Codespaces do Github**, que é muitíssimo simples e
 Em ambos os casos, basta rodar o arquivo _main.py_ para iniciar o jogo e ver o menu:
 
 <p align="center">
-  <img src="https://github.com/ricardopeloi/replica_termo/blob/main/Imagens%20Readme/Como_jogar_06.png?raw=true" width="300" title="Adicionando palavras à white list">
+  <img src="https://github.com/ricardopeloi/replica_termo/blob/main/Imagens%20Readme/Como_jogar_06.png?raw=true" width="300" title="Visão do menu do jogo no Terminal">
 </p>
 
 Daí em diante, é só curtir o jogo! 💗
@@ -99,15 +115,10 @@ As listas de palavras podem conter um excesso de palavras, como verbos conjugado
 
 Tentei buscar por listas de palavras que contivessem as palavras mais comuns/frequentes/usadas no idioma. Encontrei algo assim no site [Dicio](https://www.dicio.com.br/lista-de-palavras/), mas ocorreu o problema inverso: poucas palavras, uma lista muito pequena.
 
+Mais perto do fim do projeto (quando eu estava publicando esse texto aqui), eu notei que [o autor do Termo havia publicado a fonte de suas palavras](https://github.com/fserb/pt-br). Teria salvado um tempinho usar o dele, mas aí eu também teria aprendido menos!
+
 Por fim, a melhor solução encontrada até o momento é uma lista de palavras utilizada para a metodologia de criação de senhas chamada [**Diceware**](https://github.com/thoughtworks/dadoware/blob/master/fontes/com_acentos.txt). Inclusive essa metodologia é bem interessante, pois **usa palavras comuns para gerar senhas fortes!** Fascinante e útil para o meu projeto.
 
-
-# O que aprendi com esse projeto
-1. Tudo que eu havia feito em Python, na minha vida, até então, foi através de **Jupyter notebooks** ([veja minha biblioteca de funções de Data Science, por exemplo](https://github.com/ricardopeloi/minha_biblioteca_python/tree/main)). Nesse projeto usei arquivos em .py, e interações (do jogador) pelo Terminal. Isso demandou que eu configurasse um ambiente;
-2. Integrar as funções de diferentes arquivos .py entre eles, ou seja, um arquivo para a função principal, outro para o jogo, outro para o histórico, etc. Todas as integrações de código que havia feito até então eram bibliotecas "padrão" do Python, como Pandas, Matplotlib, Keras, etc. Agora tenho como usar meus próprios pacotinhos, e talvez até eu consiga transformar minha biblioteca de funções em algo mais robusto do que um notebook que eu sempre fico picotando. Inclusive, usei uma das minhas funções já prontas para [criar o gráfico aqui do jogo](#regras2);
-3. Pratiquei muito o uso de versionamento em Git, mantendo sempre meus arquivos atualizados e compartilhando a evolução do projeto aqui no Github, passo a passo. Até a conclusão do projeto (27/12/2024), foram quase 30 commits;
-4. [Colorir o Terminal](#regras1). Achei que não seria possível e teria que criar uma interface gráfica para o jogo, mas o Terminal permitiu atender perfeitamente o que eu imaginava no início. Ainda não aprendi a fazer uma interface gráfica, fica para o próximo projeto;
-5. Uso de Markdown, com esse Readme. Aprendi a usar links internos (_âncoras_), diversos tipos de formatação, inserção de imagens e links, bullet points (numerados ou não) e criar minha [To-Do list](#to_do) (cujos itens foram sobreescritos conforme avancei no projeto).
 
 
 # <a name="to_do"></a>TO-DO
@@ -133,9 +144,9 @@ Por fim, a melhor solução encontrada até o momento é uma lista de palavras u
     - ~~Permitir ver todos os jogadores, assim como escolher quem é o usuário que está jogando~~
     - ~~Criar um gráfico dos resultados do jogador~~
 - ~~Adicionar regras do jogo ao Readme~~
+- ~~Publicar no Linkedin~~
 
-## Em aberto (30/12)
-- Publicar no Linkedin
+## <a name="to_do_emaberto"></a>Em aberto (30/12)
 - Adicionar uma forma de jogar online
   - ~~Testes no Codespaces do Github~~
   - Streamlit?
