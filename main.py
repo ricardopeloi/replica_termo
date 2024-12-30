@@ -48,13 +48,14 @@ def gerir_listas_manuais(var_caminho, var_tipo_lista, var_tempo_sleep_padrao):
 
 
 def main():
-    lista_libraries = ["time", "pandas"]
+    lista_libraries = ["time"]
     check_and_install_packages(lista_libraries)
-    for library in lista_libraries:
-        # importlib.import_module(library)
-        module_obj = __import__(library)
-          # create a global object containging our module
-        globals()[library] = module_obj
+    import time
+    # for library in lista_libraries:
+    #     # importlib.import_module(library)
+    #     module_obj = __import__(library)
+    #     #   create a global object containging our module
+    #     globals()[library] = module_obj
 
     var_tempo_sleep_padrao = 2
 

@@ -2,3 +2,4 @@ time
 pandas
 matplotlib
 numpy
+streamlit
