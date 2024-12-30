@@ -67,7 +67,7 @@ def main():
     while True:
         print(
             '\n'
-            "=========== MENU ===========" + '\n'
+            "\033[1m=========== MENU ===========\033[0m" + '\n'
             "\033[1m1\033[0m: começar novo jogo" + '\n'
             "\033[1m2\033[0m: ver histórico de jogos" + '\n'
             "\033[1m3\033[0m: adicionar e/ou remover palavras da black list" + '\n'
@@ -119,7 +119,7 @@ def main():
 
 
         else:
-            print('\n' + "\033[3mOpção inválida!\033[1m" +  '\n')
+            print('\n' + "\033[3mOpção inválida!\033[0m" +  '\n')
             time.sleep(var_tempo_sleep_padrao) # type: ignore # ver seção check_and_install_packages
 
 

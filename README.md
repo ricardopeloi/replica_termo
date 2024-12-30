@@ -1,4 +1,4 @@
-# Como jogar?
+# Regras do jogo
 Bem vindo(a) ao jogo **_Replica Termo_**!
 
 Caso pareça familiar para você, é porque me inspirei fortemente no queridíssimo [Term.ooo](https://term.ooo/). Esse é um joguinho com regras específicas, na qual o jogador deve acertar qual é a palavra do dia a partir dessas regras.
@@ -23,7 +23,7 @@ Uma vez iniciado, o jogo escolherá uma palavra. Agora devemos adivinhá-la. Bas
 
 Por exemplo, na imagem abaixo vemos a letra **_E_**, que está na posição correta. Já a letra **_A_** existe na palavra, mas está na posição errada. As demais letras (L, S e O) não existem na palavra.
 
-<p align="left">
+<p align="center">
   <img src="https://github.com/ricardopeloi/replica_termo/blob/main/Imagens%20Readme/Como_jogar_01.png?raw=true" width="200" title="Exemplo de 1 acerto na posição, e outro acerto fora de posição">
 </p>
 
@@ -35,8 +35,8 @@ Caso o jogador use todos os seus palpites e não acerte a palavra, ele perde o j
 
 Se acertar a palavra dentro do número de palpites disponíveis, você ganhou 🎉!
 
-<p align="left">
-  <img src="https://github.com/ricardopeloi/replica_termo/blob/main/Imagens%20Readme/Como_jogar_02.png?raw=true" width="200" title="Resultado positivo de um jogo">
+<p align="center">
+  <img src="https://github.com/ricardopeloi/replica_termo/blob/main/Imagens%20Readme/Como_jogar_02.png?raw=true" width="300" title="Resultado positivo de um jogo">
 </p>
 
 No final do jogo, todos os palpites usados e os dados do jogo (incluindo o nome do jogador escolhido)[são salvos em um arquivo CSV](#regras2).
@@ -51,7 +51,7 @@ A análise mais básica e presente no jogo é ver um gráfico com os resultados.
 
 Por exemplo, esse é o meu histórico até o momento:
 
-<p align="left">
+<p align="center">
   <img src="https://github.com/ricardopeloi/replica_termo/blob/main/Imagens%20Readme/Como_jogar_03.png?raw=true" width="300" title="Exemplo de gráfico com os resultados dos jogos">
 </p>
 
@@ -65,13 +65,13 @@ No caso das palavras adicionadas ao jogo, trata-se da **white list**. E as remov
 
 Em ambos os casos, o jogador pode adicionar palavras às listas, remover palavras da lista, ou simplesmente ver as listas. Por exemplo, olha só as palavras que tive que **remover do jogo** (adicionando-as à black list), até o momento:
 
-<p align="left">
+<p align="center">
   <img src="https://github.com/ricardopeloi/replica_termo/blob/main/Imagens%20Readme/Como_jogar_04.png?raw=true" width="500" title="Exemplo de palavras presentes na black list, ou seja, removidas do jogo">
 </p>
 
 O jogador também consegue, **durante o jogo, adicionar palavras ao jogo** (via white list). Por exemplo, se ele adicionar uma palavra e acha que ela deveria estar presente na lista de palavras do jogo, basta escrever **_S_**! Caso tenha escrito uma palavra inválida de fato, pode escrever **_R_** para redigitar. O jogo também permite usar palavras inválidas para jogar, apertando qualquer outra tecla (mas eu não recomendo, e o Termo original, também não).
 
-<p align="left">
+<p align="center">
   <img src="https://github.com/ricardopeloi/replica_termo/blob/main/Imagens%20Readme/Como_jogar_05.png?raw=true" width="500" title="Adicionando palavras à white list">
 </p>
 
@@ -85,6 +85,20 @@ Tentei buscar por listas de palavras que contivessem as palavras mais comuns/fre
 
 Por fim, a melhor solução encontrada até o momento é uma lista de palavras utilizada para a metodologia de criação de senhas chamada [**Diceware**](https://github.com/thoughtworks/dadoware/blob/master/fontes/com_acentos.txt). Inclusive essa metodologia é bem interessante, pois **usa palavras comuns para gerar senhas fortes!** Fascinante e útil para o meu projeto.
 
+## Como jogar
+Atualmente, a única forma de jogar é utilizando o meu [repositório do Github](https://github.com/ricardopeloi/replica_termo), isto é, fazer um clone do repositório e rodar na sua máquina. Isto exige algum nível de conhecimento técnico, [mas nada absurdo](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
+
+Uma alternativa é usar o **Codespaces do Github**, que é muitíssimo simples e exige apenas uma conta no Github. Esse artigo [aqui](https://agnieszkapasieka.medium.com/run-python-scripts-directly-from-github-repository-using-codespaces-902468f50b0a), que é excelente e muito objetivo, explica como fazer isso.
+
+Em ambos os casos, basta rodar o arquivo _main.py_ para iniciar o jogo e ver o menu:
+
+<p align="center">
+  <img src="https://github.com/ricardopeloi/replica_termo/blob/main/Imagens%20Readme/Como_jogar_06.png?raw=true" width="300" title="Adicionando palavras à white list">
+</p>
+
+Daí em diante, é só curtir o jogo! 💗
+
+Caso queira ter seu próprio histórico, lembre-se de apagar o arquivo _Histórico.csv_, na pasta _Histórico dos jogadores_.
 
 # O que aprendi com esse projeto
 1. Tudo que eu havia feito em Python, na minha vida, até então, foi através de **Jupyter notebooks** ([veja minha biblioteca de funções de Data Science, por exemplo](https://github.com/ricardopeloi/minha_biblioteca_python/tree/main)). Nesse projeto usei arquivos em .py, e interações (do jogador) pelo Terminal. Isso demandou que eu configurasse um ambiente;
@@ -95,7 +109,7 @@ Por fim, a melhor solução encontrada até o momento é uma lista de palavras u
 
 
 # <a name="to_do"></a>TO-DO
-## concluído até 27/12/2024
+## Concluído até 27/12/2024
 - ~~Verificar se a palavra inserida é válida (usar a própria lista de palavras)~~
 - ~~Verificar letras com caracteres especiais~~
     - ~~Verificar se a palavra inserida é válida, quando ela tem caracteres especiais~~
@@ -117,3 +131,9 @@ Por fim, a melhor solução encontrada até o momento é uma lista de palavras u
     - ~~Permitir ver todos os jogadores, assim como escolher quem é o usuário que está jogando~~
     - ~~Criar um gráfico dos resultados do jogador~~
 - ~~Adicionar regras do jogo ao Readme~~
+
+## Em aberto (30/12)
+- Publicar no Linkedin
+- Adicionar uma forma de jogar online
+  - ~~Testes no Codespaces do Github~~
+  - Streamlit?
