@@ -76,15 +76,6 @@ O jogador também consegue, **durante o jogo, adicionar palavras ao jogo** (via 
 </p>
 
 
-# <a name="listaspalavras"></a>Fontes das lista de palavras em português
-**Essa foi a parte mais difícil do projeto!**
-
-As listas de palavras podem conter um excesso de palavras, como verbos conjugados ([neste caso](https://www.ime.usp.br/~pf/dicios/), por exemplo) ou palavras que eu simplesmente não conheço e atrapalhariam o jogo, deixando-o excessivamente complexo e desinteressante, caso o jogador não saiba qual é a palavra. Também achei [listas bem grandes e completas](https://github.com/titoBouzout/Dictionaries/blob/master/Portuguese%20(Brazilian).txt), mas que ao mesmo tempo não continham palavras (que eu suponho que sejam) usuais, como _carta_ e _testa_.
-
-Tentei buscar por listas de palavras que contivessem as palavras mais comuns/frequentes/usadas no idioma. Encontrei algo assim no site [Dicio](https://www.dicio.com.br/lista-de-palavras/), mas ocorreu o problema inverso: poucas palavras, uma lista muito pequena.
-
-Por fim, a melhor solução encontrada até o momento é uma lista de palavras utilizada para a metodologia de criação de senhas chamada [**Diceware**](https://github.com/thoughtworks/dadoware/blob/master/fontes/com_acentos.txt). Inclusive essa metodologia é bem interessante, pois **usa palavras comuns para gerar senhas fortes!** Fascinante e útil para o meu projeto.
-
 ## Como jogar
 Atualmente, a única forma de jogar é utilizando o meu [repositório do Github](https://github.com/ricardopeloi/replica_termo), isto é, fazer um clone do repositório e rodar na sua máquina. Isto exige algum nível de conhecimento técnico, [mas nada absurdo](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
 
@@ -99,6 +90,17 @@ Em ambos os casos, basta rodar o arquivo _main.py_ para iniciar o jogo e ver o m
 Daí em diante, é só curtir o jogo! 💗
 
 Caso queira ter seu próprio histórico, lembre-se de apagar o arquivo _Histórico.csv_, na pasta _Histórico dos jogadores_.
+
+
+# <a name="listaspalavras"></a>Fontes das lista de palavras em português
+**Essa foi a parte mais difícil do projeto!**
+
+As listas de palavras podem conter um excesso de palavras, como verbos conjugados ([neste caso](https://www.ime.usp.br/~pf/dicios/), por exemplo) ou palavras que eu simplesmente não conheço e atrapalhariam o jogo, deixando-o excessivamente complexo e desinteressante, caso o jogador não saiba qual é a palavra. Também achei [listas bem grandes e completas](https://github.com/titoBouzout/Dictionaries/blob/master/Portuguese%20(Brazilian).txt), mas que ao mesmo tempo não continham palavras (que eu suponho que sejam) usuais, como _carta_ e _testa_.
+
+Tentei buscar por listas de palavras que contivessem as palavras mais comuns/frequentes/usadas no idioma. Encontrei algo assim no site [Dicio](https://www.dicio.com.br/lista-de-palavras/), mas ocorreu o problema inverso: poucas palavras, uma lista muito pequena.
+
+Por fim, a melhor solução encontrada até o momento é uma lista de palavras utilizada para a metodologia de criação de senhas chamada [**Diceware**](https://github.com/thoughtworks/dadoware/blob/master/fontes/com_acentos.txt). Inclusive essa metodologia é bem interessante, pois **usa palavras comuns para gerar senhas fortes!** Fascinante e útil para o meu projeto.
+
 
 # O que aprendi com esse projeto
 1. Tudo que eu havia feito em Python, na minha vida, até então, foi através de **Jupyter notebooks** ([veja minha biblioteca de funções de Data Science, por exemplo](https://github.com/ricardopeloi/minha_biblioteca_python/tree/main)). Nesse projeto usei arquivos em .py, e interações (do jogador) pelo Terminal. Isso demandou que eu configurasse um ambiente;
