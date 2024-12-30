@@ -76,7 +76,7 @@ O jogador também consegue, **durante o jogo, adicionar palavras ao jogo** (via 
 </p>
 
 
-## Como jogar
+## Como instalar o jogo
 Atualmente, a única forma de jogar é utilizando o meu [repositório do Github](https://github.com/ricardopeloi/replica_termo), isto é, fazer um clone do repositório e rodar na sua máquina. Isto exige algum nível de conhecimento técnico, [mas nada absurdo](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository).
 
 Uma alternativa é usar o **Codespaces do Github**, que é muitíssimo simples e exige apenas uma conta no Github. Esse artigo [aqui](https://agnieszkapasieka.medium.com/run-python-scripts-directly-from-github-repository-using-codespaces-902468f50b0a), que é excelente e muito objetivo, explica como fazer isso.
